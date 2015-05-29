@@ -58,8 +58,18 @@ GEM
     columnize (0.9.0)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
+    elasticsearch (1.0.9)
+      elasticsearch-api (= 1.0.9)
+      elasticsearch-transport (= 1.0.9)
+    elasticsearch-api (1.0.9)
+      multi_json
+    elasticsearch-transport (1.0.9)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.5.2)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -79,6 +89,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.0)
+    multipart-post (2.0.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.2)
@@ -170,7 +181,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara
-  coffee-rails (~> 4.1.0)
+  elasticsearch
   jbuilder (~> 2.0)
   jquery-rails
   pg
