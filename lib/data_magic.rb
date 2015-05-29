@@ -8,6 +8,7 @@ class DataMagic
       arr = CSV.parse(data)
       numlines = arr.length - 1
       fields = arr[0]    # assume we have a header
+      fields.map(&:strip!)
       return [numlines, fields ]
     end
 
