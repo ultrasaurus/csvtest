@@ -5,11 +5,14 @@ class DataMagic
     def import_csv(datafile)
       data = datafile.read
       puts data
-      arr = CSV.parse(data)
-      numlines = arr.length - 1
-      fields = arr[0]    # assume we have a header
-      fields.map(&:strip!)
-      return [numlines, fields ]
+      fields = nil
+      num_rows = 0
+      CSV.parse(data, headers:true, :header_converters=> lambda {|f| f.strip}) do |row|
+        fields ||= row.headers
+        num_rows += 1
+      end
+
+      return [num_rows, fields ]
     end
 
   end
