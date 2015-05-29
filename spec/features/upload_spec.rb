@@ -6,7 +6,7 @@ RSpec.feature "User uploads", :type => :feature do
 
     attach_file('datafile', File.join(Rails.root, '/spec/fixtures/three-sentences.csv'))
 
-    click_button('Submit')
+    click_button('Upload')
 
     expect(page).to have_text("success")
   end
